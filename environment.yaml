@@ -1,8 +1,8 @@
 ---
 - name: serasaapp
-  box: trombik/ansible-ubuntu-20.04-amd64
+  box: trombik/ansible-ubuntu-18.04-amd64
   hostname: serasaapp
   ipaddress: 172.16.0.100
-  memory: 3072
-  cpus: 3
+  memory: 3584
+  cpus: 4
   provision: provision/ansible/serasaapp.yaml
