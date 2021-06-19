@@ -9,7 +9,7 @@
         path: /etc/hosts
         line: "{{ item }}"
       with_items:
-        - 172.16.1.100 serasaapp
+        - 172.17.1.100 serasaapp
 
 
     - name: Adiciona usuario suporte
