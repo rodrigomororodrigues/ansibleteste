@@ -19,3 +19,6 @@ git clone https://github.com/rodrigomororodrigues/Ansible
 cd Ansible/
 
 vagrant up
+
+User:rodrigomoro
+pass:Rodrigo@SesaraCh@llenge
