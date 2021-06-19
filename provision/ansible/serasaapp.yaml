@@ -12,7 +12,7 @@
         - 172.17.1.100 serasaapp
 
 
-    - name: Adiciona usuario suporte
+    - name: Adiciona usuario rodrigomoro
       user:
         name: rodrigomoro
         shell: /bin/bash
@@ -35,10 +35,10 @@
         - vim
         - nano
         
-    - name: Clona repositório com os arquivos do curso para a HOME do usuario suporte
+    - name: Clona repositório com os arquivos do curso para a HOME do usuario rodrigomoro
       git:
         repo: 'https://github.com/rodrigomororodrigues/ansibleteste.git'
-        dest: /home/suporte/ansibleteste
+        dest: /home/rodrigomoro/ansibleteste
         
     - name: Cria o diretório .ssh
       file:
@@ -56,7 +56,7 @@
         group: rodrigomoro
         mode: '0755'
 
-    - name: Criando o arquivo 98_4linux
+    - name: Criando o arquivo 98_rodrigomoro
       copy:
         src: files/98_rodrigmoro
         dest: /etc/sudoers.d
