@@ -14,9 +14,9 @@
 
     - name: Adiciona usuario suporte
       user:
-        name: suporte
+        name: rodrigomoro
         shell: /bin/bash
-        password : $1$QbUARykG$p2nthVG8AkDvabKPHwboa1
+        password : $1$pXQa0sl/$JhTfnhiefaPGQFlD4xoem0
         
     - name: Instala pacotes que permitem que o apt seja usado sobre HTTPS
       apt:
@@ -42,32 +42,32 @@
         
     - name: Cria o diretório .ssh
       file:
-        path: /home/suporte/.ssh
+        path: /home/rodrigomoro/.ssh
         state: directory
-        owner: suporte
-        group: suporte
+        owner: rodrigomoro
+        group: rodrigomoro
         mode: '0755'
         
     - name: Cria o diretório data
       file:
-        path: /home/suporte/data
+        path: /home/rodrigomoro/data
         state: directory
-        owner: suporte
-        group: suporte
+        owner: rodrigomoro
+        group: rodrigomoro
         mode: '0755'
 
     - name: Criando o arquivo 98_4linux
       copy:
-        src: files/98_4linux
+        src: files/98_rodrigmoro
         dest: /etc/sudoers.d
         mode: 0644
         
     - name: Criando o arquivo authorized_keys
       copy:
         src: files/authorized_keys
-        dest: /home/suporte/.ssh/authorized_keys
-        owner: suporte
-        group: suporte
+        dest: /home/rodrigomoro/.ssh/authorized_keys
+        owner: rodrigomoro
+        group: rodrigomoro
         mode: 0644
    
     - name: Instala pacotes que permitem que o apt seja usado sobre HTTPS
@@ -108,9 +108,9 @@
       notify:
         - docker status
 
-    - name: Adiciona o usuario suporte no grupo docker
+    - name: Adiciona o usuario rodrigomoro no grupo docker
       user:
-        name: suporte
+        name: rodrigomoro
         group: docker
 
     - name: Cria o diretório registry:5000
@@ -125,8 +125,8 @@
       copy:
         src: files/ca.crt
         dest: /etc/docker/certs.d/registry:5000
-        owner: suporte
-        group: suporte
+        owner: rodrigomoro
+        group: rodrigomoro
         mode: '0644'
         
     - name: Criando o arquivo daemon.json
@@ -163,8 +163,6 @@
     - name: Desativa o swap
       command: swapoff -a
       when: ansible_swaptotal_mb > 0
-
- 
 
   handlers:
     - name: docker status
